@@ -1,0 +1,8 @@
+platformName: android
+appPackage: com.sensoro.lingsi
+appActivity: .ui.activity.SplashActivity
+autoGrantPermissions: true
+udid: None
+noReset: true
+ensureWebviewsHavePages: True
+unicodeKeyboart: True
