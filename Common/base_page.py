@@ -3,6 +3,7 @@
 import os
 import time
 
+import allure
 from appium.webdriver.webdriver import WebDriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions
@@ -27,6 +28,10 @@ class BasePage:
         path = os.path.join(output_path, screenshot_name)
         logger.info(f'screen shot saved in {path}')
         self.driver.get_screenshot_as_file(path)
+        # 将图片插入allure中
+        with open(path, "rb") as f:
+            content = f.read()
+        allure.attach(content, attachment_type=allure.attachment_type.PNG)
 
     # 查找元素
     def find_element(self, locator, timeout=20):
