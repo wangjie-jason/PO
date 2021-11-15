@@ -13,6 +13,6 @@ class MainPage(BasePage):
     )
 
     def to_SafetyProtection(self):
+        # 进入安全防护页面
         self.find_element_click(self._SafetyProtection_locator)
         return SafetyProtectionPage(self.driver)
-
